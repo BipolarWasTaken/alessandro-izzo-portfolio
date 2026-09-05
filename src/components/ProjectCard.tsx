@@ -2,15 +2,21 @@
 
 import { useId, useState } from "react";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
-import type { ProjectContent } from "@/lib/content/types";
+import type { ProjectContent, ProjectStatus } from "@/lib/content/types";
 import { StatusBadge } from "./StatusBadge";
-import { IconChevronDown } from "./icons";
+import { IconChevronDown, IconExternalLink } from "./icons";
 import { FlowDiagram } from "./diagrams/FlowDiagram";
 import { getProjectFlow } from "./diagrams/projectFlows";
 
 const LABELS = {
   it: { problem: "Problema", solution: "Soluzione", role: "Ruolo", process: "Processo", tools: "Strumenti", result: "Risultato" },
   en: { problem: "Problem", solution: "Solution", role: "Role", process: "Process", tools: "Tools", result: "Result" },
+};
+
+const TOP_BAR_STYLES: Record<ProjectStatus, string> = {
+  development: "bg-[var(--color-badge-dev-text)]",
+  active: "bg-[var(--color-badge-active-text)]",
+  paused: "bg-[var(--color-badge-paused-text)]",
 };
 
 export function ProjectCard({ project }: { project: ProjectContent }) {
@@ -21,7 +27,8 @@ export function ProjectCard({ project }: { project: ProjectContent }) {
   const flow = getProjectFlow(project.id, locale);
 
   return (
-    <article className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[var(--shadow-card)] transition-shadow hover:shadow-[var(--shadow-card-hover)]">
+    <article className="group relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card-hover)]">
+      <div className={`h-1 w-full ${TOP_BAR_STYLES[project.status]}`} aria-hidden="true" />
       <div className="p-6 sm:p-8">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <h3 className="font-display text-2xl font-medium text-[var(--color-ink)]">{project.name}</h3>
@@ -42,23 +49,37 @@ export function ProjectCard({ project }: { project: ProjectContent }) {
           {project.tools.map((tool) => (
             <span
               key={tool}
-              className="rounded-full bg-[var(--color-surface-sunken)] px-3 py-1 text-xs font-medium text-[var(--color-ink-soft)]"
+              className="rounded-full bg-[var(--color-surface-sunken)] px-3 py-1 text-xs font-medium text-[var(--color-ink-soft)] transition-colors group-hover:bg-[var(--color-accent-soft)]"
             >
               {tool}
             </span>
           ))}
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((o) => !o)}
-          aria-expanded={open}
-          aria-controls={panelId}
-          className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-accent)] hover:text-[var(--color-accent-strong)]"
-        >
-          {open ? project.collapseLabel : project.expandLabel}
-          <IconChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
-        </button>
+        <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+          <button
+            type="button"
+            onClick={() => setOpen((o) => !o)}
+            aria-expanded={open}
+            aria-controls={panelId}
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-accent)] hover:text-[var(--color-accent-strong)]"
+          >
+            {open ? project.collapseLabel : project.expandLabel}
+            <IconChevronDown className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
+          </button>
+
+          {project.demoUrl && (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-ink)] hover:text-[var(--color-accent)]"
+            >
+              {project.demoLabel}
+              <IconExternalLink className="h-3.5 w-3.5" />
+            </a>
+          )}
+        </div>
       </div>
 
       {open && (

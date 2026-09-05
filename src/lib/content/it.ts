@@ -12,9 +12,9 @@ export const it: Content = {
   nav: {
     links: [
       { id: "about", label: "Chi sono" },
+      { id: "projects", label: "Progetti" },
       { id: "skills", label: "Competenze" },
       { id: "experience", label: "Esperienza" },
-      { id: "projects", label: "Progetti" },
       { id: "education", label: "Formazione" },
       { id: "contact", label: "Contatti" },
     ],
@@ -22,7 +22,7 @@ export const it: Content = {
   },
   hero: {
     eyebrow: "Boscoreale (NA), Italia · Disponibile per ruoli full-remote, anche all'estero",
-    headline: "Costruisco community, dirigo progetti digitali, li porto dall'idea al lancio.",
+    headline: "Costruisco community. Lancio prodotti con l'AI.",
     valueProp:
       "Community & Digital Growth Specialist: unisco la gestione di community e relazioni clienti ad alto volume con la direzione end-to-end di progetti software, lavorando ogni giorno con strumenti AI agentic come Claude Code.",
     intro:
@@ -171,6 +171,8 @@ export const it: Content = {
         diagramCaption: "Rappresentazione concettuale del prodotto",
         expandLabel: "Vedi il case study",
         collapseLabel: "Chiudi",
+        demoUrl: "https://cv-tailor-inky.vercel.app/",
+        demoLabel: "Vedi il prodotto live",
       },
       {
         id: "discord-lead-gen",
@@ -255,9 +257,11 @@ export const it: Content = {
   contact: {
     kicker: "Contatti",
     title: "Parliamone.",
-    body: "Il modo più veloce per contattarmi è via email o LinkedIn. Rispondo personalmente a ogni messaggio.",
+    body: "Il modo più veloce per contattarmi è via email o LinkedIn. Per collaborazioni Discord puoi scrivermi direttamente lì. Rispondo personalmente a ogni messaggio.",
     emailLabel: "Email",
     linkedinLabel: "LinkedIn",
+    discordLabel: "Discord",
+    discordNote: "Per progetti e collaborazioni Discord",
     formName: "Nome",
     formEmail: "Email",
     formMessage: "Messaggio",

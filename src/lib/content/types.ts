@@ -84,6 +84,8 @@ export interface ProjectContent {
   diagramCaption: string;
   expandLabel: string;
   collapseLabel: string;
+  demoUrl?: string;
+  demoLabel?: string;
 }
 
 export interface SideProject {
@@ -120,6 +122,8 @@ export interface ContactContent {
   body: string;
   emailLabel: string;
   linkedinLabel: string;
+  discordLabel: string;
+  discordNote: string;
   formName: string;
   formEmail: string;
   formMessage: string;

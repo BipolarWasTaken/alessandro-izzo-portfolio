@@ -12,9 +12,9 @@ export const en: Content = {
   nav: {
     links: [
       { id: "about", label: "About" },
+      { id: "projects", label: "Projects" },
       { id: "skills", label: "Skills" },
       { id: "experience", label: "Experience" },
-      { id: "projects", label: "Projects" },
       { id: "education", label: "Education" },
       { id: "contact", label: "Contact" },
     ],
@@ -22,7 +22,7 @@ export const en: Content = {
   },
   hero: {
     eyebrow: "Naples Area, Italy · Open to full-remote roles, including international",
-    headline: "I build communities. I direct digital projects. I take them from idea to launch.",
+    headline: "I build communities. I ship products with AI.",
     valueProp:
       "Community & Digital Growth Specialist: I combine community management and high-volume client relationships with end-to-end direction of software projects, working daily with AI agentic tools like Claude Code.",
     intro:
@@ -168,6 +168,8 @@ export const en: Content = {
         diagramCaption: "Conceptual representation of the product",
         expandLabel: "View case study",
         collapseLabel: "Close",
+        demoUrl: "https://cv-tailor-inky.vercel.app/",
+        demoLabel: "View the live product",
       },
       {
         id: "discord-lead-gen",
@@ -249,9 +251,11 @@ export const en: Content = {
   contact: {
     kicker: "Contact",
     title: "Let's talk.",
-    body: "The fastest way to reach me is by email or LinkedIn. I personally reply to every message.",
+    body: "The fastest way to reach me is by email or LinkedIn. For Discord work, feel free to message me there directly. I personally reply to every message.",
     emailLabel: "Email",
     linkedinLabel: "LinkedIn",
+    discordLabel: "Discord",
+    discordNote: "For Discord projects and collaborations",
     formName: "Name",
     formEmail: "Email",
     formMessage: "Message",

@@ -55,10 +55,10 @@ export function CvDownload({
   }, [open]);
 
   const base =
-    "inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline-offset-4";
+    "inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all hover:-translate-y-0.5 focus-visible:outline-offset-4";
   const styles =
     variant === "primary"
-      ? "bg-[var(--color-ink)] text-white hover:bg-[var(--color-accent-strong)]"
+      ? "bg-[var(--color-ink)] text-white hover:bg-[var(--color-accent-strong)] hover:shadow-lg"
       : "border border-[var(--color-border-strong)] text-[var(--color-ink)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]";
 
   return (

@@ -14,7 +14,12 @@ export function Hero() {
         className="dot-grid pointer-events-none absolute -right-24 -top-24 h-72 w-72 opacity-40 sm:h-96 sm:w-96"
         aria-hidden="true"
       />
-      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+      <div
+        className="pointer-events-none absolute -left-32 top-16 h-[26rem] w-[26rem] rounded-full opacity-[0.14] blur-[110px]"
+        style={{ background: "var(--color-accent)" }}
+        aria-hidden="true"
+      />
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--color-border-strong)] bg-[var(--color-surface)] px-3.5 py-1.5 text-xs font-medium text-[var(--color-ink-soft)] sm:text-sm">
             <IconMapPin className="h-3.5 w-3.5 text-[var(--color-accent)]" />
@@ -23,7 +28,7 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={80}>
-          <h1 className="font-display max-w-3xl text-balance text-[2.25rem] font-medium leading-[1.12] tracking-tight text-[var(--color-ink)] sm:text-5xl md:text-[3.4rem]">
+          <h1 className="font-display max-w-3xl text-balance text-[2.5rem] font-medium leading-[1.08] tracking-tight text-[var(--color-ink)] sm:text-6xl md:text-[4.2rem]">
             {t.hero.headline}
           </h1>
         </Reveal>
@@ -42,7 +47,7 @@ export function Hero() {
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-accent-strong)]"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[var(--color-accent-strong)] hover:shadow-lg"
             >
               {t.hero.ctaPrimary}
               <IconArrowRight className="h-4 w-4" />

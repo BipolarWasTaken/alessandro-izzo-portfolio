@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://alessandroizzo.com/sitemap.xml",
+    sitemap: "https://alessandro-izzo-portfolio.netlify.app/sitemap.xml",
   };
 }

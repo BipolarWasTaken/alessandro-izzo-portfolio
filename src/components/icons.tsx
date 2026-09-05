@@ -67,6 +67,41 @@ export function IconPlus({ className }: IconProps) {
   );
 }
 
+export function IconExternalLink({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M18 13v6a1 1 0 01-1 1H5a1 1 0 01-1-1V7a1 1 0 011-1h6"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M14 4h6v6M20 4l-9 9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function IconDiscord({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M8.5 15.5c2.5 1.2 4.5 1.2 7 0M9 9.8c-.1-.1-.3-.1-.4 0-.7.5-1.2 1.2-1.4 2-.1.3.1.6.4.6.3 0 .5-.2.6-.5.1-.5.4-.9.8-1.2.2-.2.2-.5 0-.7-.2-.2-.4-.3-.6-.2M15.4 9.8c.1-.1.3-.1.4 0 .7.5 1.2 1.2 1.4 2 .1.3-.1.6-.4.6-.3 0-.5-.2-.6-.5-.1-.5-.4-.9-.8-1.2-.2-.2-.2-.5 0-.7.2-.2.4-.3.6-.2"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.5 6.5C15.3 5.9 14 5.5 12.7 5.3c-.2.3-.3.6-.4.9-1.3-.2-2.6-.2-3.9 0-.1-.3-.3-.6-.4-.9-1.3.2-2.6.6-3.8 1.2C2 10 1.4 13.4 1.7 16.7c1.4 1.1 2.9 1.7 4.5 2.1.4-.5.7-1.1.9-1.7-.5-.2-.9-.4-1.4-.7.1-.1.2-.2.4-.3 2.9 1.4 6 1.4 8.9 0 .1.1.2.2.4.3-.4.3-.9.5-1.4.7.3.6.5 1.2.9 1.7 1.6-.4 3.1-1.1 4.5-2.1.4-3.8-.6-7.1-2.9-10.2z"
+        stroke="currentColor"
+        strokeWidth="1.3"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function IconMapPin({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">

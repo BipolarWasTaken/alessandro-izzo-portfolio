@@ -19,7 +19,10 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
-const SITE_URL = "https://alessandroizzo.com";
+// TODO: update to the custom domain (e.g. alessandroizzo.com) once it's live —
+// keeping this pointed at a domain that isn't serving the site yet breaks
+// link previews (Open Graph image, canonical, structured data).
+const SITE_URL = "https://alessandro-izzo-portfolio.netlify.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

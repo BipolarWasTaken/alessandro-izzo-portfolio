@@ -39,8 +39,19 @@ export default function OpengraphImage() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
-          <div style={{ fontSize: 58, fontWeight: 500, color: "#17191a", lineHeight: 1.15, maxWidth: 980 }}>
-            Costruisco community, dirigo progetti digitali, li porto dall&apos;idea al lancio.
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              fontSize: 76,
+              fontWeight: 500,
+              color: "#17191a",
+              lineHeight: 1.15,
+              maxWidth: 980,
+            }}
+          >
+            <span>Costruisco community.</span>
+            <span>Lancio prodotti con l&apos;AI.</span>
           </div>
           <div style={{ fontSize: 26, color: "#1f4e5f", fontFamily: "sans-serif", fontWeight: 600 }}>
             Community & Digital Growth Specialist

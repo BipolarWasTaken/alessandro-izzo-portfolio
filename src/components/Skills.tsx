@@ -15,7 +15,7 @@ export function Skills() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {t.skills.categories.map((cat, i) => (
             <Reveal key={cat.title} delay={i * 70}>
-              <div className="h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7 shadow-[var(--shadow-card)] transition-shadow hover:shadow-[var(--shadow-card-hover)]">
+              <div className="h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card-hover)]">
                 <h3 className="font-display text-xl font-medium text-[var(--color-ink)]">{cat.title}</h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-[var(--color-ink-soft)]">{cat.description}</p>
                 <ul className="mt-5 flex flex-wrap gap-2">
