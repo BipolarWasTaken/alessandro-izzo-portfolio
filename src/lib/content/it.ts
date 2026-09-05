@@ -22,7 +22,7 @@ export const it: Content = {
   },
   hero: {
     eyebrow: "Boscoreale (NA), Italia · Disponibile per ruoli full-remote, anche all'estero",
-    headline: "Costruisco community. Lancio prodotti con l'AI.",
+    headline: "Crea l'idea. Al resto penso io.",
     valueProp:
       "Community & Digital Growth Specialist: unisco la gestione di community e relazioni clienti ad alto volume con la direzione end-to-end di progetti software, lavorando ogni giorno con strumenti AI agentic come Claude Code.",
     intro:

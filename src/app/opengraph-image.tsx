@@ -50,8 +50,8 @@ export default function OpengraphImage() {
               maxWidth: 980,
             }}
           >
-            <span>Costruisco community.</span>
-            <span>Lancio prodotti con l&apos;AI.</span>
+            <span>Crea l&apos;idea.</span>
+            <span>Al resto penso io.</span>
           </div>
           <div style={{ fontSize: 26, color: "#1f4e5f", fontFamily: "sans-serif", fontWeight: 600 }}>
             Community & Digital Growth Specialist

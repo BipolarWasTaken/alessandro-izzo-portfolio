@@ -22,7 +22,7 @@ export const en: Content = {
   },
   hero: {
     eyebrow: "Naples Area, Italy · Open to full-remote roles, including international",
-    headline: "I build communities. I ship products with AI.",
+    headline: "Bring the idea. I'll handle the rest.",
     valueProp:
       "Community & Digital Growth Specialist: I combine community management and high-volume client relationships with end-to-end direction of software projects, working daily with AI agentic tools like Claude Code.",
     intro:
