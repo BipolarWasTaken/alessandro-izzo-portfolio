@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
+import { ThemeProvider, THEME_INIT_SCRIPT } from "@/lib/theme/ThemeProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { content } from "@/lib/content";
@@ -54,7 +55,10 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#fafaf8",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fafaf8" },
+    { media: "(prefers-color-scheme: dark)", color: "#12161a" },
+  ],
 };
 
 const personJsonLd = {
@@ -80,17 +84,24 @@ const personJsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="it" className={`${inter.variable} ${fraunces.variable} antialiased`}>
+    <html
+      lang="it"
+      className={`${inter.variable} ${fraunces.variable} antialiased`}
+      suppressHydrationWarning
+    >
       <body className="flex min-h-full flex-col bg-[var(--color-bg)]">
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
-        <LanguageProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </LanguageProvider>
+        <ThemeProvider>
+          <LanguageProvider>
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

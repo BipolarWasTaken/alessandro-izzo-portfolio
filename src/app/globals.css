@@ -15,6 +15,7 @@
   --color-accent-strong: #123845;
   --color-accent-soft: #e9f1f2;
   --color-accent-ring: rgba(31, 78, 95, 0.35);
+  --color-on-accent: #ffffff;
 
   --color-badge-dev-bg: #eaf0fb;
   --color-badge-dev-text: #2e4c82;
@@ -30,6 +31,34 @@
   --shadow-card-hover: 0 2px 4px rgba(23, 25, 26, 0.06), 0 16px 32px -12px rgba(23, 25, 26, 0.16);
 }
 
+:root[data-theme="dark"] {
+  --color-bg: #12161a;
+  --color-surface: #1c2226;
+  --color-surface-sunken: #0a0d0f;
+  --color-border: #2b3237;
+  --color-border-strong: #3d454b;
+
+  --color-ink: #f1f1ee;
+  --color-ink-soft: #b7b9bc;
+  --color-ink-faint: #888b8f;
+
+  --color-accent: #4fb3cc;
+  --color-accent-strong: #6ec2d6;
+  --color-accent-soft: #15282d;
+  --color-accent-ring: rgba(79, 179, 204, 0.4);
+  --color-on-accent: #0d1216;
+
+  --color-badge-dev-bg: #1a2740;
+  --color-badge-dev-text: #8fb4f5;
+  --color-badge-active-bg: #103328;
+  --color-badge-active-text: #5ed9a6;
+  --color-badge-paused-bg: #242420;
+  --color-badge-paused-text: #b6b1a5;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+  --shadow-card-hover: 0 2px 4px rgba(0, 0, 0, 0.5), 0 16px 32px -12px rgba(0, 0, 0, 0.6);
+}
+
 @theme inline {
   --color-bg: var(--color-bg);
   --color-surface: var(--color-surface);
@@ -42,6 +71,7 @@
   --color-accent: var(--color-accent);
   --color-accent-strong: var(--color-accent-strong);
   --color-accent-soft: var(--color-accent-soft);
+  --color-on-accent: var(--color-on-accent);
   --font-sans: var(--font-body);
   --font-display: var(--font-display);
 }
@@ -63,7 +93,7 @@ body {
 
 ::selection {
   background: var(--color-accent);
-  color: white;
+  color: var(--color-on-accent);
 }
 
 :focus-visible {

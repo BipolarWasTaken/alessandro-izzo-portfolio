@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 import { LanguageSwitch } from "./LanguageSwitch";
+import { ThemeToggle } from "./ThemeToggle";
 import { IconClose, IconMenu } from "./icons";
 
 export function Header() {
@@ -55,10 +56,11 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <ThemeToggle />
           <LanguageSwitch />
           <a
             href="#contact"
-            className="rounded-full bg-[var(--color-accent)] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-accent-strong)]"
+            className="rounded-full bg-[var(--color-accent)] px-4 py-2 text-sm font-semibold text-[var(--color-on-accent)] transition-colors hover:bg-[var(--color-accent-strong)]"
           >
             {t.nav.ctaLabel}
           </a>
@@ -90,11 +92,14 @@ export function Header() {
             ))}
           </nav>
           <div className="mt-4 flex items-center justify-between gap-3">
-            <LanguageSwitch />
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <LanguageSwitch />
+            </div>
             <a
               href="#contact"
               onClick={() => setMobileOpen(false)}
-              className="flex-1 rounded-full bg-[var(--color-accent)] px-4 py-3 text-center text-sm font-semibold text-white"
+              className="flex-1 rounded-full bg-[var(--color-accent)] px-4 py-3 text-center text-sm font-semibold text-[var(--color-on-accent)]"
             >
               {t.nav.ctaLabel}
             </a>

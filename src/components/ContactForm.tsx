@@ -75,7 +75,7 @@ export function ContactForm() {
       </div>
       <button
         type="submit"
-        className="w-full rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-accent-strong)] sm:w-auto"
+        className="w-full rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-[var(--color-on-accent)] transition-colors hover:bg-[var(--color-accent-strong)] sm:w-auto"
       >
         {t.contact.formSubmit}
       </button>

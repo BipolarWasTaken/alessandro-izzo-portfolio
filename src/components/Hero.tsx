@@ -47,7 +47,7 @@ export function Hero() {
           <div className="mt-9 flex flex-wrap items-center gap-3">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[var(--color-accent-strong)] hover:shadow-lg"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-[var(--color-on-accent)] transition-all hover:-translate-y-0.5 hover:bg-[var(--color-accent-strong)] hover:shadow-lg"
             >
               {t.hero.ctaPrimary}
               <IconArrowRight className="h-4 w-4" />

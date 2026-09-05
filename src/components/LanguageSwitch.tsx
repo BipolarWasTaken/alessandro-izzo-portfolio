@@ -19,7 +19,7 @@ export function LanguageSwitch({ className = "" }: { className?: string }) {
           aria-pressed={locale === lng}
           className={`rounded-full px-2.5 py-1 font-medium uppercase tracking-wide transition-colors ${
             locale === lng
-              ? "bg-[var(--color-accent)] text-white"
+              ? "bg-[var(--color-accent)] text-[var(--color-on-accent)]"
               : "text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]"
           }`}
         >
