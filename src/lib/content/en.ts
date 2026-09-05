@@ -261,8 +261,8 @@ export const en: Content = {
   },
   cvDownload: {
     label: "Download CV",
-    it: "Italian (.docx)",
-    en: "English (.docx)",
+    it: "Italian (.pdf)",
+    en: "English (.pdf)",
   },
   footer: {
     rights: "Alessandro Izzo. All rights reserved.",
