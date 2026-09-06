@@ -2,17 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 import { StatusBadge } from "./StatusBadge";
-import { IconArrowRight, IconExternalLink } from "./icons";
+import { IconArrowRight, IconExternalLink, IconZoomIn } from "./icons";
 import { FlowDiagram } from "./diagrams/FlowDiagram";
 import { getProjectFlow } from "./diagrams/projectFlows";
+import { Lightbox } from "./Lightbox";
 
 export function ProjectDetail({ projectId }: { projectId: string }) {
   const { t, locale } = useLanguage();
   const project = t.projects.items.find((p) => p.id === projectId);
   const flow = getProjectFlow(projectId, locale);
   const labels = t.projects.detailLabels;
+  const [openShot, setOpenShot] = useState<number | null>(null);
 
   if (!project) return null;
 
@@ -108,18 +111,29 @@ export function ProjectDetail({ projectId }: { projectId: string }) {
           <div className="mt-16">
             <h2 className="font-display text-xl font-medium text-[var(--color-ink)]">{labels.screenshots}</h2>
             <div className="mt-6 space-y-10">
-              {project.screenshots.map((shot) => (
+              {project.screenshots.map((shot, i) => (
                 <figure key={shot.src}>
-                  <div className="overflow-hidden rounded-xl border border-[var(--color-border)] shadow-[var(--shadow-card)]">
+                  <button
+                    type="button"
+                    onClick={() => setOpenShot(i)}
+                    aria-label={labels.screenshots}
+                    className="group relative block w-full cursor-zoom-in overflow-hidden rounded-xl border border-[var(--color-border)] shadow-[var(--shadow-card)]"
+                  >
                     <Image
                       src={shot.src}
                       alt={shot.alt}
                       width={1440}
                       height={900}
                       sizes="(max-width: 768px) 100vw, 700px"
-                      className="w-full"
+                      quality={92}
+                      className="w-full transition-transform duration-300 group-hover:scale-[1.02]"
                     />
-                  </div>
+                    <span className="absolute inset-0 flex items-center justify-center bg-black/0 transition-colors group-hover:bg-black/20">
+                      <span className="flex h-11 w-11 items-center justify-center rounded-full bg-black/60 text-white opacity-0 transition-opacity group-hover:opacity-100">
+                        <IconZoomIn className="h-5 w-5" />
+                      </span>
+                    </span>
+                  </button>
                   <figcaption className="mt-3 text-sm text-[var(--color-ink-faint)]">{shot.caption}</figcaption>
                 </figure>
               ))}
@@ -137,6 +151,15 @@ export function ProjectDetail({ projectId }: { projectId: string }) {
           </Link>
         </div>
       </div>
+
+      {openShot !== null && project.screenshots && project.screenshots[openShot] && (
+        <Lightbox
+          src={project.screenshots[openShot].src}
+          alt={project.screenshots[openShot].alt}
+          caption={project.screenshots[openShot].caption}
+          onClose={() => setOpenShot(null)}
+        />
+      )}
     </article>
   );
 }
