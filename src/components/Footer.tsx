@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 export function Footer() {
@@ -13,9 +14,9 @@ export function Footer() {
           © {year} {t.footer.rights}
         </p>
         <p className="text-xs text-[var(--color-ink-faint)]">{t.footer.built}</p>
-        <a href="#top" className="text-xs font-medium text-[var(--color-accent)] hover:text-[var(--color-accent-strong)]">
+        <Link href="/#top" className="text-xs font-medium text-[var(--color-accent)] hover:text-[var(--color-accent-strong)]">
           {t.footer.backToTop}
-        </a>
+        </Link>
       </div>
     </footer>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 import { LanguageSwitch } from "./LanguageSwitch";
@@ -36,34 +37,34 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-        <a
-          href="#top"
+        <Link
+          href="/#top"
           className="font-display text-lg font-semibold tracking-tight text-[var(--color-ink)]"
         >
           Alessandro Izzo
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
           {t.nav.links.map((link) => (
-            <a
+            <Link
               key={link.id}
-              href={`#${link.id}`}
+              href={`/#${link.id}`}
               className="text-sm font-medium text-[var(--color-ink-soft)] transition-colors hover:text-[var(--color-ink)]"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
           <ThemeToggle />
           <LanguageSwitch />
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             className="rounded-full bg-[var(--color-accent)] px-4 py-2 text-sm font-semibold text-[var(--color-on-accent)] transition-colors hover:bg-[var(--color-accent-strong)]"
           >
             {t.nav.ctaLabel}
-          </a>
+          </Link>
         </div>
 
         <button
@@ -81,14 +82,14 @@ export function Header() {
         <div className="border-t border-[var(--color-border)] bg-[var(--color-bg)] px-5 pb-6 pt-2 lg:hidden">
           <nav className="flex flex-col gap-1" aria-label="Mobile">
             {t.nav.links.map((link) => (
-              <a
+              <Link
                 key={link.id}
-                href={`#${link.id}`}
+                href={`/#${link.id}`}
                 onClick={() => setMobileOpen(false)}
                 className="rounded-lg px-3 py-3 text-base font-medium text-[var(--color-ink)] hover:bg-[var(--color-surface-sunken)]"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="mt-4 flex items-center justify-between gap-3">
@@ -96,13 +97,13 @@ export function Header() {
               <ThemeToggle />
               <LanguageSwitch />
             </div>
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               onClick={() => setMobileOpen(false)}
               className="flex-1 rounded-full bg-[var(--color-accent)] px-4 py-3 text-center text-sm font-semibold text-[var(--color-on-accent)]"
             >
               {t.nav.ctaLabel}
-            </a>
+            </Link>
           </div>
         </div>
       )}
