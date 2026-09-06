@@ -27,33 +27,35 @@ export function ProjectCard({ project }: { project: ProjectContent }) {
   const flow = getProjectFlow(project.id, locale);
 
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card-hover)]">
-      <div className={`h-1 w-full ${TOP_BAR_STYLES[project.status]}`} aria-hidden="true" />
-      <div className="p-6 sm:p-8">
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <h3 className="font-display text-2xl font-medium text-[var(--color-ink)]">{project.name}</h3>
-          <StatusBadge status={project.status} label={project.statusLabel} />
-        </div>
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card-hover)]">
+      <div className={`h-1 w-full shrink-0 ${TOP_BAR_STYLES[project.status]}`} aria-hidden="true" />
+      <div className="flex flex-1 flex-col p-6 sm:p-8">
+        <div className="flex-1">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <h3 className="font-display text-2xl font-medium text-[var(--color-ink)]">{project.name}</h3>
+            <StatusBadge status={project.status} label={project.statusLabel} />
+          </div>
 
-        {project.launchedTag && (
-          <span className="mt-3 inline-block rounded-full border border-[var(--color-border-strong)] px-2.5 py-0.5 text-[0.7rem] font-medium text-[var(--color-ink-soft)]">
-            {project.launchedTag}
-          </span>
-        )}
-
-        <p className="mt-3 text-base leading-relaxed text-[var(--color-ink-soft)]">{project.tagline}</p>
-
-        <p className="mt-4 text-sm font-medium text-[var(--color-ink)]">{project.result}</p>
-
-        <div className="mt-5 flex flex-wrap gap-2">
-          {project.tools.map((tool) => (
-            <span
-              key={tool}
-              className="rounded-full bg-[var(--color-surface-sunken)] px-3 py-1 text-xs font-medium text-[var(--color-ink-soft)] transition-colors group-hover:bg-[var(--color-accent-soft)]"
-            >
-              {tool}
+          {project.launchedTag && (
+            <span className="mt-3 inline-block rounded-full border border-[var(--color-border-strong)] px-2.5 py-0.5 text-[0.7rem] font-medium text-[var(--color-ink-soft)]">
+              {project.launchedTag}
             </span>
-          ))}
+          )}
+
+          <p className="mt-3 text-base leading-relaxed text-[var(--color-ink-soft)]">{project.tagline}</p>
+
+          <p className="mt-4 text-sm font-medium text-[var(--color-ink)]">{project.result}</p>
+
+          <div className="mt-5 flex flex-wrap gap-2">
+            {project.tools.map((tool) => (
+              <span
+                key={tool}
+                className="rounded-full bg-[var(--color-surface-sunken)] px-3 py-1 text-xs font-medium text-[var(--color-ink-soft)] transition-colors group-hover:bg-[var(--color-accent-soft)]"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
         </div>
 
         <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">

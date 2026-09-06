@@ -13,9 +13,9 @@ export function Projects() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading kicker={t.projects.kicker} title={t.projects.title} intro={t.projects.intro} />
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-2">
           {t.projects.items.map((project, i) => (
-            <Reveal key={project.id} delay={i * 60}>
+            <Reveal key={project.id} delay={i * 60} className="h-full">
               <ProjectCard project={project} />
             </Reveal>
           ))}
