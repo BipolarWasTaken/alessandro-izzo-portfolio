@@ -131,6 +131,18 @@ export const it: Content = {
     title: "Case study, non semplici screenshot.",
     intro:
       "Progetti reali diretti tramite strumenti AI agentic, con risultati ed esiti diversi. La trasparenza sullo stato di ciascuno è parte integrante di questo portfolio.",
+    viewDetailLabel: "Scopri il progetto",
+    backLabel: "Torna ai progetti",
+    detailLabels: {
+      problem: "Problema",
+      solution: "Soluzione",
+      role: "Ruolo",
+      process: "Processo",
+      tools: "Strumenti",
+      result: "Risultato",
+      status: "Stato",
+      screenshots: "L'app in azione",
+    },
     items: [
       {
         id: "clipforge",
@@ -149,8 +161,23 @@ export const it: Content = {
         tools: ["Claude Code", "yt-dlp", "Whisper", "Ollama"],
         result: "Tool funzionante e in uso personale, con roadmap attiva verso nuove funzionalità.",
         diagramCaption: "Rappresentazione concettuale della pipeline",
-        expandLabel: "Vedi il case study",
-        collapseLabel: "Chiudi",
+        screenshots: [
+          {
+            src: "/images/projects/clipforge/generate.jpg",
+            alt: "Scheda Genera di ClipForge, con area per incollare un link o trascinare un video",
+            caption: "Genera: incolla un link (YouTube, Twitch, Kick) o trascina un video — il resto è automatico.",
+          },
+          {
+            src: "/images/projects/clipforge/library.jpg",
+            alt: "Scheda Clip di ClipForge con la libreria delle clip generate",
+            caption: "Clip: libreria delle clip generate finora, con sottotitoli karaoke e pronte da scaricare.",
+          },
+          {
+            src: "/images/projects/clipforge/publish.jpg",
+            alt: "Scheda Pubblica di ClipForge per la pubblicazione diretta sui social",
+            caption: "Pubblica: scelta di una clip dalla libreria e pubblicazione diretta sugli account collegati.",
+          },
+        ],
       },
       {
         id: "ai-cv-tailor",
@@ -169,10 +196,15 @@ export const it: Content = {
         tools: ["Claude Code (full-stack)", "Product Hunt", "LinkedIn"],
         result: "Prodotto completo lanciato pubblicamente su Product Hunt. Nessuna registrazione utente o pagamento reale ad oggi.",
         diagramCaption: "Rappresentazione concettuale del prodotto",
-        expandLabel: "Vedi il case study",
-        collapseLabel: "Chiudi",
         demoUrl: "https://cv-tailor-inky.vercel.app/",
         demoLabel: "Vedi il prodotto live",
+        screenshots: [
+          {
+            src: "/images/projects/ai-cv-tailor/login.jpg",
+            alt: "Schermata di accesso di AI CV Tailor",
+            caption: "La schermata di accesso del prodotto pubblicato, con login Google o email/password.",
+          },
+        ],
       },
       {
         id: "discord-lead-gen",
@@ -189,8 +221,6 @@ export const it: Content = {
         tools: ["Claude Code", "Google Sheets", "Apps Script"],
         result: "118 lead individuati, 105 contattati, alcune risposte ricevute — nessuna vendita chiusa ad oggi.",
         diagramCaption: "Rappresentazione concettuale della pipeline",
-        expandLabel: "Vedi il case study",
-        collapseLabel: "Chiudi",
       },
       {
         id: "aicos",
@@ -208,8 +238,18 @@ export const it: Content = {
         tools: ["Claude Code"],
         result: "Lead reali trovati e contattati, nessun cliente pagante acquisito.",
         diagramCaption: "Rappresentazione concettuale del sistema",
-        expandLabel: "Vedi il case study",
-        collapseLabel: "Chiudi",
+        screenshots: [
+          {
+            src: "/images/projects/aicos/demo-site.jpg",
+            alt: "Esempio di sito starter generato da AICOS per un cliente dimostrativo",
+            caption: "Un sito “starter” realmente generato dal sistema — chiaramente etichettato come demo, non un cliente reale.",
+          },
+          {
+            src: "/images/projects/aicos/connect.jpg",
+            alt: "Schermata di connessione alla dashboard interna di AICOS",
+            caption: "La dashboard operativa interna, protetta da chiave API — qui senza dati aziendali reali visibili.",
+          },
+        ],
       },
     ],
     sideProjectsTitle: "Altri esperimenti",

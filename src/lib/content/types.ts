@@ -82,10 +82,15 @@ export interface ProjectContent {
   tools: string[];
   result: string;
   diagramCaption: string;
-  expandLabel: string;
-  collapseLabel: string;
   demoUrl?: string;
   demoLabel?: string;
+  screenshots?: ProjectScreenshot[];
+}
+
+export interface ProjectScreenshot {
+  src: string;
+  alt: string;
+  caption: string;
 }
 
 export interface SideProject {
@@ -100,6 +105,18 @@ export interface ProjectsContent {
   items: ProjectContent[];
   sideProjectsTitle: string;
   sideProjects: SideProject[];
+  viewDetailLabel: string;
+  backLabel: string;
+  detailLabels: {
+    problem: string;
+    solution: string;
+    role: string;
+    process: string;
+    tools: string;
+    result: string;
+    status: string;
+    screenshots: string;
+  };
 }
 
 export interface EducationItem {
